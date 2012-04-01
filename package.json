@@ -2,8 +2,9 @@
     "author": "bluejack <bluejack@bluejack.com>"
   , "name": "mc"
   , "description": "The memcache client for node.js. Correct, performant, flexible."
-  , "version": "1.0.2"
+  , "version": "1.0.3"
   , "main": "./lib/memcache-client"
+  , "homepage": "http://overclocked.com/mc/"
   , "keyword": [
       "memcache"
     , "client"
@@ -15,7 +16,7 @@
     ]
   , "repository": {
       "type": "git"
-    , "url": "https://github.com/overclocked/memcache-client"
+    , "url": "https://github.com/overclocked/mc"
     }
   , "engine": { "node": ">=0.6.6" }
   , "directories": { "lib": "./lib" }
@@ -26,7 +27,6 @@
     , "should": "*"
     , "sinon": "*"
     }
-  , "scripts": { "cli": "node bin/mc.js" }
   , "maintainers": [{
       "name": "bluejack"
     , "email": "bluejack@bluejack.com"
@@ -34,6 +34,6 @@
     }]
   , "license": { 
       "type": "MIT"
-    , "url": "http://github.com/bluejack/memcache-client/blob/master/LICENSE" 
+    , "url": "http://github.com/bluejack/mc/blob/master/LICENSE" 
     }
 }
