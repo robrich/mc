@@ -216,7 +216,7 @@ describe('MemcacheClient', function () {
       should.exist(processor);
       cb.should.equal(cb);
       cmd.should.equal('set key 0 0 3');
-      val.should.equal('val');
+      val.toString('utf8').should.equal('val');
       done();
     });	
     cli.store("set", "key", "val", cb);    
@@ -229,7 +229,7 @@ describe('MemcacheClient', function () {
       should.exist(processor);
       cb.should.equal(cb);
       cmd.should.equal('set key 0 0 3 12345');
-      val.should.equal('val');
+      val.toString('utf8').should.equal('val');
       done();
     });	
     cli.store("set", "key", "val", { cas: 12345 }, cb);    	 
@@ -241,7 +241,7 @@ describe('MemcacheClient', function () {
       should.exist(processor);
       cb.should.equal(cb);
       cmd.should.equal('set key 7 0 3');
-      val.should.equal('val');
+      val.toString('utf8').should.equal('val');
       done();
     });	
     cli.store("set", "key", "val", { flags: 7 }, cb);    	 
@@ -253,7 +253,7 @@ describe('MemcacheClient', function () {
       should.exist(processor);
       cb.should.equal(cb);
       cmd.should.equal('set key 7 5 3');
-      val.should.equal('val');
+      val.toString('utf8').should.equal('val');
       done();
     });	
     cli.store("set", "key", "val", { flags: 7, exptime: 5 }, cb);    	 
@@ -268,7 +268,7 @@ describe('MemcacheClient', function () {
       should.exist(processor);
       cb.should.equal(cb);
       cmd.should.equal(cmdMatch);
-      val.should.equal('val');
+      val.toString('utf8').should.equal('val');
       done();
     });	
     cli.store("set", "key", "val", { flags: 7 }, cb);    	 

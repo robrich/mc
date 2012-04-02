@@ -17,7 +17,7 @@ function readFromServer(iter, cli) {
 	}
       }
       else {
-        Number(response[key]).should.equal(iter);
+        response[key].should.equal(iter + '€100');
       }
       count++;
     });
@@ -29,7 +29,7 @@ describe('MemcacheClient', function () {
     var cli = new mc.Client();    
     cli.connect(function () {
       for (var i = 1; i <= 50000; i++) {
-        cli.set('k' + i, i, function (err, response) {
+        cli.set('k' + i, i + '€100', function (err, response) {
           if (err) {            
             err.type.should.equal('CONNECTION_ERROR');
           }
