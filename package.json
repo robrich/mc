@@ -18,14 +18,14 @@
       "type": "git"
     , "url": "https://github.com/overclocked/mc"
     }
-  , "engine": { "node": ">=0.6.6" }
-  , "directories": { "lib": "./lib" }
-  , "dependencies": { }
+  , "engine":       { "node": ">=0.6.6" }
+  , "directories":  { "lib": "./lib" }
+  , "dependencies": { "connman": "*" }
   , "devDependencies": {
-      "mocha": "*"
+      "mocha":  "*"
     , "jshint": "*"
     , "should": "*"
-    , "sinon": "*"
+    , "sinon":  "*"
     }
   , "maintainers": [{
       "name": "bluejack"

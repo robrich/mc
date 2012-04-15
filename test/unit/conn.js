@@ -10,6 +10,7 @@ describe('Connection', function () {
   beforeEach(function() {
     c = new Connection();
     c.sock = new net.Socket();
+    c.ready = true;
   });
 
   it('should construct successfully with valid server settings.', function() {
@@ -32,20 +33,9 @@ describe('Connection', function () {
 
   it('should take the appropriate actions on restart', function() {
     c.buffer = new Buffer('123');
-    c.restart();
-    should.not.exist(c.sock);
+    c.flushQueue();
     should.not.exist(c.buffer);
-  });
-
-  it('should take the appropriate actions on reconnect', function(done) {
-    var backoff = c.backoff;
-    var mock = sinon.mock(c).expects('open').once();
-    c.reconnect();
-    setTimeout(function() { // Give the backoff timeout a chance to trigger.
-      c.backoff.should.equal(backoff * 2);
-      mock.verify();  
-      done();
-    }, backoff * 4);
+    c.ready.should.equal.false;
   });
 
   it('should flush the queue properly.', function(done) {

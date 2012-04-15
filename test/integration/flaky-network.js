@@ -13,6 +13,7 @@ function readFromServer(iter, cli) {
       if (err) {
 	// Hack.
         if (err.type !== 'NOT_FOUND' && err.type !== 'CONNECTION_ERROR') {
+          console.log(err);
           err.type.should.equal('CONNECTION_ERROR');
 	}
       }

@@ -49,9 +49,9 @@ function get(iter) {
     if (err) { log("GET",err.type ); } 
     else     {
       if (iteration != response[key]) {
-	log("GET", "*********************** " + iteration + ":" + response[key]);
+	      log("GET", "*********************** " + iteration + ":" + response[key]);
       } else {	  
-	log("GET", "OK: " + response[key]); }
+      	log("GET", "OK: " + response[key]); }
       }
   });
 }
